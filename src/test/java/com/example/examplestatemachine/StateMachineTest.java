@@ -81,4 +81,80 @@ public class StateMachineTest {
         sc.actionA();
         assertFalse(sc.isAccept());
     }
+    
+    /*
+     * Test Sequence: ABA
+     */
+    @Test
+    public void test_7() {
+    		sc.actionA();
+    		sc.actionB();
+    		sc.actionA();
+    		assertTrue(sc.isAccept());
+    }
+    
+    /*
+     * Test Sequence: ABBA
+     */
+    @Test
+    public void test_8() {
+    		sc.actionA();
+    		sc.actionB();
+    		sc.actionB();
+    		sc.actionA();
+    		assertTrue(sc.isAccept());
+    }
+    
+    /*
+     * Test Sequence: BAAB
+     */
+    @Test
+    public void test_9() {
+    		sc.actionB();
+    		sc.actionA();
+    		sc.actionA();
+    		sc.actionB();
+    		assertTrue(sc.isAccept());
+    }
+    
+    /*
+     * Test Sequence: AB
+     */
+    @Test
+    public void test_10() {
+    		sc.actionA();
+    		sc.actionB();
+    		assertFalse(sc.isAccept());
+    }
+    
+    /*
+     * Test Sequence: ABAB
+     */
+    public void test_11() {
+    		sc.actionA();
+    		sc.actionB();
+    		sc.actionA();
+    		sc.actionB();
+    		assertFalse(sc.isAccept());
+    }
+    
+    /*
+     * Test Sequence: BABA
+     */
+    public void test_12() {
+    		sc.actionB();
+    		sc.actionA();
+    		sc.actionB();
+    		sc.actionA();
+    		assertFalse(sc.isAccept());
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
